@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
+    
+    <title>Charmo App</Applet></title>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#menu">Menu</a></li>
+    </ul>
+  </nav>
+</header> 
+
+  </head>
+  <body>
+
+<section>
+  <h2>News</h2>
+  <div id="news">
+    <article>
+      <h3>Exam Dates Released</h3>
+      <p>Check the portal for updates.</p>
+    </article>
+  </div>
+</section>
+
+    <section>
+  <h2>Today's Menu</h2>
+  <div id="menu">
+    <p>Loading...</p>
+  </div>
+</section>
+
+  <div id="schedule-app">
+  <h2>Class Schedule</h2>
+  <input type="text" id="className" placeholder="Class Name" />
+  <input type="datetime-local" id="classTime" />
+  <button onclick="addClass()">Add Class</button>
+  <ul id="classList"></ul>
+</div>
+
+    <div id="app"></div>
+    <div id="campus-map" style="height: 400px; width: 100%;"></div>
+    <script type="module" src="/src/main.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  </body>
+</html>
