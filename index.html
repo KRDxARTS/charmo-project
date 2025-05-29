@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <title>Charmo University App</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/assets/favicon.ico" />
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="src/style.css">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""/>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- iOS PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Charmo">
+    <link rel="apple-touch-icon" href="/assets/icon-192.png">
+  </head>
+  
+  <body>
+    <!-- App Shell -->
+    <header class="app-header">
+      <h1>Charmo University</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#news-section" class="nav-link">News</a></li>
+          <li><a href="#schedule-section" class="nav-link">Schedule</a></li>
+          <li><a href="#map-section" class="nav-link">Map</a></li>
+          <li><a href="#menu-section" class="nav-link">Menu</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="app-container">
+      <!-- News Section -->
+      <section id="news-section" class="content-section">
+        <h2>News & Announcements</h2>
+        <div id="newsList" class="news-container"></div>
+      </section>
+
+      <!-- Schedule Section -->
+      <section id="schedule-section" class="content-section">
+        <h2>Class Schedule</h2>
+        <form id="scheduleForm" class="schedule-form">
+          <input type="text" id="className" placeholder="Class Name" required />
+          <input type="datetime-local" id="classTime" required />
+          <button type="submit">Add Class</button>
+        </form>
+        <ul id="classList" class="schedule-list"></ul>
+      </section>
+
+      <!-- Menu Section -->
+      <section id="menu-section" class="content-section">
+        <h2>Today's Menu</h2>
+        <div id="menu" class="menu-container"></div>
+      </section>
+
+      <!-- Map Section -->
+      <section id="map-section" class="content-section">
+        <h2>Campus Map</h2>
+        <div id="campus-map" class="map-container"></div>
+      </section>
+    </main>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading-indicator">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""></script>
+      
+    <!-- Main App -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
